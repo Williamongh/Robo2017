@@ -1,0 +1,11 @@
+--c99 -c --cpu Cortex-M3 -D__RTX -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\代码 -I.\RTE\CMSIS -I.\RTE\Device\STM32F103VE
+-I D:\Find丶文档\Robocon\代码\RTE
+-I D:\Find丶文档\Robocon\代码\RTE\Device\STM32F103VE
+-I "D:\Software\MDK Keil\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include"
+-I "D:\Software\MDK Keil\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS_RTX\INC"
+-I "D:\Software\MDK Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0"
+-I "D:\Software\MDK Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"
+-I "D:\Software\MDK Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\StdPeriph_Driver\inc"
+-I "D:\Software\MDK Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\RTE_Driver"
+-D__UVISION_VERSION="513" -D_RTE_ -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER
+-o .\objects\stm32f10x_dbgmcu.o --omf_browse .\objects\stm32f10x_dbgmcu.crf --depend .\objects\stm32f10x_dbgmcu.d --feedback ".\Objects\Roboco测试小车.fed" "D:\Software\MDK Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\StdPeriph_Driver\src\stm32f10x_dbgmcu.c"
