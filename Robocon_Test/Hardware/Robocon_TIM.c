@@ -252,9 +252,8 @@ void Interrupt_TIM5_Init(void)
     TIM_ITConfig(TIM5,TIM_IT_Update,ENABLE);
 		
     TIM_Cmd(TIM5, ENABLE);																		
- 
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5 , DISABLE);		/*先关闭等待使用*/  
 
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5 , ENABLE);	
 	
 }
 	

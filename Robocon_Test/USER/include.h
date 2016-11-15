@@ -15,7 +15,7 @@
 #include "Robocon_Debug.h"
 #include "usart.h"
 #include "RCC_Conf.h"
-
+#include "DAC.h"
 	
 typedef struct
 {

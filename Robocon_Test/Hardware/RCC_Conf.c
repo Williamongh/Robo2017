@@ -17,8 +17,5 @@ void RCC_Init()
 		while(RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET) ; /*检查指定的RCC标志位(PLL准备好标志)设置与否*/   
 		RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);  /*设置系统时钟（SYSCLK） */ 
 		while(RCC_GetSYSCLKSource() != 0x08);     /*0x08：PLL作为系统时钟 */     
-
-
-	
 }
 
