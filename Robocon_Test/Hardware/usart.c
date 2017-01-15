@@ -1,5 +1,4 @@
- 
- #include "include.h"
+ #include "USART.h"
  
  void USART1_Init(u32 bound)
  {
@@ -97,9 +96,23 @@ void _sys_exit(int x)
 //重定义fputc函数 
 int fputc(int ch, FILE *f)
 {      
-	while((USART1->SR&0X40)==0);//循环发送,直到发送完毕   
-    USART1->DR = (u8) ch;      
+	while((UART4->SR&0X40)==0){};//循环发送,直到发送完毕   
+    UART4->DR = (u8) ch;      
 	return ch;
 }
 #endif 
 
+void UART_PutChar(USART_TypeDef* USARTx, uint8_t Data)  
+{  
+    USART_SendData(USARTx, Data);  
+    while(USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET){}  
+}  
+
+void UART_PutBuff (USART_TypeDef* USARTx, uint8 *buff, uint32 len)
+{
+    while(len--)
+    {
+        UART_PutChar(USARTx, *buff);
+        buff++;
+    }
+}
